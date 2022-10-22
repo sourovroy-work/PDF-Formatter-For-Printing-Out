@@ -1,5 +1,5 @@
 import os
-import paginator
+import SRC.paginator as paginator
 from glob import glob
 from PyPDF2 import PdfFileReader, PdfFileMerger
 import shutil
@@ -10,6 +10,7 @@ OUTPUT_FOLDER = "OUTPUT"
 BLANK_PATH = "./.cache/BLANK/blank.pdf"
 TEMP_FOLDER = "./.cache/TEMP"
 TEMP_PATH = TEMP_FOLDER + "/*.pdf"
+DELETE_ME = "delete_me.txt"
 
 LIMIT = 60
 
@@ -22,6 +23,8 @@ clean(OUTPUT_FOLDER)
 def create(folder):
     if not os.path.exists(folder):
         os.makedirs(folder)
+    with open(os.path.join(folder, DELETE_ME), 'w') as fp:
+        pass
 create(TEMP_FOLDER)
 create(OUTPUT_FOLDER)
 

@@ -43,5 +43,5 @@ def add_page_numbers(input_path, output_path):
 
 
 if __name__ == "__main__":
-    add_page_numgers("destination.pdf", "output.pdf")
+    add_page_numbers("destination.pdf", "output.pdf")
 
